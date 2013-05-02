@@ -1,0 +1,7 @@
+fos_user:
+    db_driver: mongodb
+    firewall_name:  main
+    user_class: Acme\DemoBundle\Document\User
+
+    group:
+        group_class: Application\Sonata\UserBundle\Document\Group

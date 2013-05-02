@@ -1,0 +1,2 @@
+_fos_sonata_integration:
+    resource: "routing/fos_sonata.yml"

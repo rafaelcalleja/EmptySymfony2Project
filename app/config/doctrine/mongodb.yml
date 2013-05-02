@@ -1,0 +1,19 @@
+doctrine_mongodb:
+    default_database: dev_%kernel.environment%
+    connections:
+        default:
+            server: mongodb://localhost:27017
+            options: {}
+    document_managers:
+        default:
+            mappings:
+                ApplicationSonataUserBundle: ~
+                SonataUserBundle: ~
+                FOSUserBundle: ~
+                AcmeDemoBundle: ~
+#           metadata_cache_driver: ~
+                #type: memcache
+                #class: Doctrine\Common\Cache\MemcacheCache
+                #host: localhost
+                #port: 11211
+                #instance_class: Memcache

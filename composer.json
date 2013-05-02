@@ -17,7 +17,16 @@
         "sensio/framework-extra-bundle": "2.2.*",
         "sensio/generator-bundle": "2.2.*",
         "jms/security-extra-bundle": "1.4.*",
-        "jms/di-extra-bundle": "1.3.*"
+        "jms/di-extra-bundle": "1.3.*",
+        "friendsofsymfony/user-bundle": "*",
+        "sonata-project/admin-bundle": "2.2.x-dev",
+        "sonata-project/doctrine-mongodb-admin-bundle": "2.2.x-dev",
+        "sonata-project/intl-bundle": "*",
+        "sonata-project/cache-bundle": "*",
+        "knplabs/knp-menu-bundle": "1.1.x-dev",
+        "sonata-project/block-bundle": "2.2.x-dev",
+        "sonata-project/easy-extends-bundle": "2.1.x-dev",
+        "sonata-project/user-bundle": "2.2.x-dev"
     },
     "scripts": {
         "post-install-cmd": [

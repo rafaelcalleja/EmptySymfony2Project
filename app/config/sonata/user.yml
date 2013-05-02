@@ -1,0 +1,15 @@
+sonata_user:
+     security_acl: false
+     manager_type: mongodb
+     class:                  # Entity Classes
+         user:               Acme\DemoBundle\Document\User
+         group:              Application\Sonata\UserBundle\Document\Group
+     admin:                  # Admin Classes
+        user:
+            class:           Acme\DemoBundle\Admin\Document\UserAdmin
+#            controller:     SonataAdminBundle:CRUD
+#            translation:    SonataUserBundle
+        group: 
+            class:           Acme\DemoBundle\Admin\Document\GroupAdmin
+#            controller:     SonataAdminBundle:CRUD
+#            translation:    SonataUserBundle
