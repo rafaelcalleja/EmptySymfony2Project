@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "4875aa19dc313c4b1bd9e862b094ac92",
+    "hash": "76c3a98beefbfb2cce322f745aa1c7b5",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -800,6 +800,50 @@
             "time": "2013-03-24 20:43:58"
         },
         {
+            "name": "friendsofsymfony/twitter-bundle",
+            "version": "dev-master",
+            "target-dir": "FOS/TwitterBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfSymfony/FOSTwitterBundle.git",
+                "reference": "af7ba5839b1b5d17c0a0efc32df10fe1bb092d68"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSTwitterBundle/zipball/af7ba5839b1b5d17c0a0efc32df10fe1bb092d68",
+                "reference": "af7ba5839b1b5d17c0a0efc32df10fe1bb092d68",
+                "shasum": ""
+            },
+            "require": {
+                "kertz/twitteroauth": "*",
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": "2.*",
+                "symfony/security-bundle": ">=2.1,<2.3-dev"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "FOS\\TwitterBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "FriendsOfSymfony Community",
+                    "homepage": "https://github.com/FriendsOfSymfony/FOSTwitterBundle/contributors"
+                }
+            ],
+            "description": "Symfony FOSTwitterBundle",
+            "homepage": "http://friendsofsymfony.github.com",
+            "keywords": [
+                "Twitter authentication"
+            ],
+            "time": "2013-02-11 23:09:22"
+        },
+        {
             "name": "friendsofsymfony/user-bundle",
             "version": "v1.3.1",
             "target-dir": "FOS/UserBundle",
@@ -1223,6 +1267,32 @@
                 "security"
             ],
             "time": "2013-02-18 08:46:41"
+        },
+        {
+            "name": "kertz/twitteroauth",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kertz/twitteroauth.git",
+                "reference": "30d9fba685516cfeee12bdf0aa50d803f112214b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kertz/twitteroauth/zipball/30d9fba685516cfeee12bdf0aa50d803f112214b",
+                "reference": "30d9fba685516cfeee12bdf0aa50d803f112214b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "twitteroauth"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "time": "2012-08-02 14:24:38"
         },
         {
             "name": "knplabs/knp-menu",
@@ -2781,7 +2851,9 @@
         "knplabs/knp-menu-bundle": 20,
         "sonata-project/block-bundle": 20,
         "sonata-project/easy-extends-bundle": 20,
-        "sonata-project/user-bundle": 20
+        "sonata-project/user-bundle": 20,
+        "friendsofsymfony/twitter-bundle": 20,
+        "kertz/twitteroauth": 20
     },
     "platform": {
         "php": ">=5.3.3"

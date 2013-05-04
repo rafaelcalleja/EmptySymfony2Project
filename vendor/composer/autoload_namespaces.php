@@ -36,6 +36,7 @@ return array(
     'JMS\\' => $vendorDir . '/jms/parser-lib/src',
     'Google\\Authenticator' => $vendorDir . '/sonata-project/google-authenticator/lib',
     'FOS\\UserBundle' => $vendorDir . '/friendsofsymfony/user-bundle',
+    'FOS\\TwitterBundle' => $vendorDir . '/friendsofsymfony/twitter-bundle',
     'Exporter' => $vendorDir . '/sonata-project/exporter/lib',
     'Doctrine\\ORM' => $vendorDir . '/doctrine/orm/lib',
     'Doctrine\\ODM\\MongoDB' => $vendorDir . '/doctrine/mongodb-odm/lib',
