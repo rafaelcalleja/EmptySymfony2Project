@@ -1,2 +1,6 @@
 _fos_sonata_integration:
     resource: "routing/fos_sonata.yml"
+    
+_acme_demo: 
+    resource: "@AcmeDemoBundle/Resources/config/routing.xml"
+    prefix:   /demo

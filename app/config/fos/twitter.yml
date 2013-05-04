@@ -2,4 +2,6 @@ fos_twitter:
   file: %kernel.root_dir%/../vendor/kertz/twitteroauth/twitteroauth/twitteroauth.php
   consumer_key: rzXW1gtbLGVpPf88idd7Q
   consumer_secret: KMKQXwDP460jdmXcSkmf8ZvtBhQameqh62vgELIIY4
+  access_token: 246177862-wjdOKqzwTEyILn13BwBmZDztOJgcELwT2R8
+  access_token_secret: wYuIEPm78uG4axnmp8KBlTYJ9IBSXjPXpq1x8AOJKc
   callback_url: http://new.dev/login_check
