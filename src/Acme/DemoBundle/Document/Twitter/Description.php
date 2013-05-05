@@ -1,90 +1,72 @@
 <?php
 
 namespace Acme\DemoBundle\Document\Twitter;
-
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
-
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @MongoDB\Document
  */
-class Description
-{
+class Description {
 	/**
 	 * @MongoDB\Id
 	 */
 	protected $id;
-	
-    /**
-     * @var \DateTime
-     * @MongoDB\Field(type="timestamp")
-     */
-    protected $createdAt;
 
-    /**
-     * @var \DateTime
-     * @MongoDB\Date 
-     */
-    protected $updatedAt;
-    
+	/**
+	 * @var \DateTime
+	 * @MongoDB\Field(type="datetime")
+	 * @Gedmo\Timestampable(on="create")
+	 */
+	protected $createdAt;
 
-    protected $urls; //array
+	/**
+	 * @var \DateTime
+	 * @MongoDB\Field(type="datetime")
+	 * @Gedmo\Timestampable(on="udpate")
+	 */
+	protected $updatedAt;
 
-    
-    /**
-     * Sets the creation date
-     *
-     * @param \DateTime|null $createdAt
-     */
-    public function setCreatedAt(\DateTime $createdAt = null)
-    {
-        $this->createdAt = $createdAt;
-    }
+	/** @MongoDB\Bin */
+	protected $urls; //array
 
-    /**
-     * Returns the creation date
-     *
-     * @return \DateTime|null
-     */
-    public function getCreatedAt()
-    {
-        return $this->createdAt;
-    }
+	/**
+	 * Returns the creation date
+	 *
+	 * @return \DateTime|null
+	 */
+	public function getCreatedAt() {
+		return $this->createdAt;
+	}
 
-    /**
-     * Sets the last update date
-     *
-     * @param \DateTime|null $updatedAt
-     */
-    public function setUpdatedAt(\DateTime $updatedAt = null)
-    {
-        $this->updatedAt = $updatedAt;
-    }
+	/**
+	 * Returns the last update date
+	 *
+	 * @return \DateTime|null
+	 */
+	public function getUpdatedAt() {
+		return $this->updatedAt;
+	}
 
-    /**
-     * Returns the last update date
-     *
-     * @return \DateTime|null
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updatedAt;
-    }
+	/**
+	 * @return the unknown_type
+	 */
+	public function getId() {
+		return $this->id;
+	}
 
-   /**
-     * Hook on pre-persist operations
-     */
-    public function prePersist()
-    {
-        $this->createdAt = new \DateTime;
-        $this->updatedAt = new \DateTime;
-    }
+	/**
+	 * @return the unknown_type
+	 */
+	public function getUrls() {
+		return $this->urls;
+	}
 
-    /**
-     * Hook on pre-update operations
-     */
-    public function preUpdate()
-    {
-        $this->updatedAt = new \DateTime;
-    }
+	/**
+	 * @param unknown_type $urls
+	 */
+	public function setUrls($urls) {
+		$this->urls = $urls;
+	}
+
 }

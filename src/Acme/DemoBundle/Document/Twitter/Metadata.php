@@ -1,91 +1,80 @@
 <?php
 
 namespace Acme\DemoBundle\Document\Twitter;
-
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
-
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @MongoDB\Document
  */
-class Metadata
-{
+class Metadata {
 	/**
 	 * @MongoDB\Id
 	 */
 	protected $id;
-	
-    /**
-     * @var \DateTime
-     * @MongoDB\Field(type="timestamp")
-     */
-    protected $createdAt;
 
-    /**
-     * @var \DateTime
-     * @MongoDB\Date 
-     */
-    protected $updatedAt;
-    
+	/**
+	 * @var \DateTime
+	 * @MongoDB\Field(type="datetime")
+	 * @Gedmo\Timestampable(on="create")
+	 */
+	protected $createdAt;
 
-    protected $result_type; //' => string 'recent' (length=6)
-    protected $iso_language_code; //' => string 'in' (length=2)
+	/**
+	 * @var \DateTime
+	 * @MongoDB\Field(type="datetime")
+	 * @Gedmo\Timestampable(on="update")
+	 */
+	protected $updatedAt;
 
-    
-    /**
-     * Sets the creation date
-     *
-     * @param \DateTime|null $createdAt
-     */
-    public function setCreatedAt(\DateTime $createdAt = null)
-    {
-        $this->createdAt = $createdAt;
-    }
+	/**
+	 * @var string
+	 * @MongoDB\Field(type="string")
+	 */
+	protected $result_type;
 
-    /**
-     * Returns the creation date
-     *
-     * @return \DateTime|null
-     */
-    public function getCreatedAt()
-    {
-        return $this->createdAt;
-    }
+	/**
+	 * @var string
+	 * @MongoDB\Field(type="string")
+	 */
+	protected $iso_language_code;
 
-    /**
-     * Sets the last update date
-     *
-     * @param \DateTime|null $updatedAt
-     */
-    public function setUpdatedAt(\DateTime $updatedAt = null)
-    {
-        $this->updatedAt = $updatedAt;
-    }
+	/**
+	 * Returns the creation date
+	 *
+	 * @return \DateTime|null
+	 */
+	public function getCreatedAt() {
+		return $this->createdAt;
+	}
 
-    /**
-     * Returns the last update date
-     *
-     * @return \DateTime|null
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updatedAt;
-    }
+	/**
+	 * Returns the last update date
+	 *
+	 * @return \DateTime|null
+	 */
+	public function getUpdatedAt() {
+		return $this->updatedAt;
+	}
 
-   /**
-     * Hook on pre-persist operations
-     */
-    public function prePersist()
-    {
-        $this->createdAt = new \DateTime;
-        $this->updatedAt = new \DateTime;
-    }
+	public function getId() {
+		return $this->id;
+	}
 
-    /**
-     * Hook on pre-update operations
-     */
-    public function preUpdate()
-    {
-        $this->updatedAt = new \DateTime;
-    }
+	public function getResultType() {
+		return $this->result_type;
+	}
+
+	public function setResultType(string $result_type) {
+		$this->result_type = $result_type;
+	}
+
+	public function getIsoLanguageCode() {
+		return $this->iso_language_code;
+	}
+
+	public function setIsoLanguageCode(string $iso_language_code) {
+		$this->iso_language_code = $iso_language_code;
+	}
+
 }

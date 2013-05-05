@@ -18,7 +18,7 @@ class TwitterController extends Controller {
 
     	
     	
-    	var_dump(get_object_vars($result)); 
+    	var_dump($api->format, $result); 
     
         return array();
     }

@@ -1,95 +1,123 @@
 <?php
 
 namespace Acme\DemoBundle\Document\Twitter;
-
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
-
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @MongoDB\Document
  */
-class UserEntities
-{
+class UserEntities {
 	/**
 	 * @MongoDB\Id
 	 */
 	protected $id;
-	
-    /**
-     * @var \DateTime
-     * @MongoDB\Field(type="timestamp")
-     */
-    protected $createdAt;
 
-    /**
-     * @var \DateTime
-     * @MongoDB\Date 
-     */
-    protected $updatedAt;
-    
+	/**
+	 * @var \DateTime
+	 * @MongoDB\Field(type="datetime")
+	 * @Gedmo\Timestampable(on="create")
+	 */
+	protected $createdAt;
 
-    
+	/**
+	 * @var \DateTime
+	 * @MongoDB\Field(type="datetime")
+	 * @Gedmo\Timestampable(on="update") 
+	 */
+	protected $updatedAt;
+
+	/** @MongoDB\Bin */
 	protected $hashtags; //Array' => 
-    protected $symbols; //Array 
-    protected $urls; //Array 
-    protected $user_mentions; //Array 
-    
 
-    
-    /**
-     * Sets the creation date
-     *
-     * @param \DateTime|null $createdAt
-     */
-    public function setCreatedAt(\DateTime $createdAt = null)
-    {
-        $this->createdAt = $createdAt;
-    }
+	/** @MongoDB\Bin */
+	protected $symbols; //Array
 
-    /**
-     * Returns the creation date
-     *
-     * @return \DateTime|null
-     */
-    public function getCreatedAt()
-    {
-        return $this->createdAt;
-    }
+	/** @MongoDB\Bin */
+	protected $urls; //Array
 
-    /**
-     * Sets the last update date
-     *
-     * @param \DateTime|null $updatedAt
-     */
-    public function setUpdatedAt(\DateTime $updatedAt = null)
-    {
-        $this->updatedAt = $updatedAt;
-    }
+	/** @MongoDB\Bin */
+	protected $user_mentions; //Array 
 
-    /**
-     * Returns the last update date
-     *
-     * @return \DateTime|null
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updatedAt;
-    }
+	/**
+	 * Returns the creation date
+	 *
+	 * @return \DateTime|null
+	 */
+	public function getCreatedAt() {
+		return $this->createdAt;
+	}
 
-   /**
-     * Hook on pre-persist operations
-     */
-    public function prePersist()
-    {
-        $this->createdAt = new \DateTime;
-        $this->updatedAt = new \DateTime;
-    }
+	/**
+	 * Returns the last update date
+	 *
+	 * @return \DateTime|null
+	 */
+	public function getUpdatedAt() {
+		return $this->updatedAt;
+	}
 
-    /**
-     * Hook on pre-update operations
-     */
-    public function preUpdate()
-    {
-        $this->updatedAt = new \DateTime;
-    }
+	/**
+	 * @return the unknown_type
+	 */
+	public function getId() {
+		return $this->id;
+	}
+
+	/**
+	 * @return the unknown_type
+	 */
+	public function getHashtags() {
+		return $this->hashtags;
+	}
+
+	/**
+	 * @param unknown_type $hashtags
+	 */
+	public function setHashtags($hashtags) {
+		$this->hashtags = $hashtags;
+	}
+
+	/**
+	 * @return the unknown_type
+	 */
+	public function getSymbols() {
+		return $this->symbols;
+	}
+
+	/**
+	 * @param unknown_type $symbols
+	 */
+	public function setSymbols($symbols) {
+		$this->symbols = $symbols;
+	}
+
+	/**
+	 * @return the unknown_type
+	 */
+	public function getUrls() {
+		return $this->urls;
+	}
+
+	/**
+	 * @param unknown_type $urls
+	 */
+	public function setUrls($urls) {
+		$this->urls = $urls;
+	}
+
+	/**
+	 * @return the unknown_type
+	 */
+	public function getUserMentions() {
+		return $this->user_mentions;
+	}
+
+	/**
+	 * @param unknown_type $user_mentions
+	 */
+	public function setUserMentions($user_mentions) {
+		$this->user_mentions = $user_mentions;
+	}
+
 }

@@ -2,7 +2,8 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: fos.yml } 
-    - { resource: doctrine/mongodb.yml }	
+    - { resource: doctrine/mongodb.yml }
+    - { resource: doctrine/behavior.yml }	
     - { resource: sonata/user.yml }
     - { resource: sonata/admin.yml }
     - { resource: sonata/block.yml }

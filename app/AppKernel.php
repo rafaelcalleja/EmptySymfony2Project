@@ -35,6 +35,9 @@ class AppKernel extends Kernel
         		
         //Twitter BUNDLES
         	new FOS\TwitterBundle\FOSTwitterBundle(),
+        		
+        //Doctrine Behaviors
+        	new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

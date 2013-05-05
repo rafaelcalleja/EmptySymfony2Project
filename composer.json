@@ -28,7 +28,8 @@
         "sonata-project/easy-extends-bundle": "2.1.x-dev",
         "sonata-project/user-bundle": "2.2.x-dev",
         "friendsofsymfony/twitter-bundle": "dev-master",
-        "kertz/twitteroauth": "dev-master"
+        "kertz/twitteroauth": "dev-master",
+        "stof/doctrine-extensions-bundle": "1.1.x-dev"
     },
     "scripts": {
         "post-install-cmd": [

@@ -1,0 +1,5 @@
+stof_doctrine_extensions:
+    default_locale: es_ES
+    mongodb:
+        default:
+            timestampable: true # not needed: listeners are not enabled by default
